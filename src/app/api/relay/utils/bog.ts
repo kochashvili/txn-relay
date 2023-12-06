@@ -21,6 +21,7 @@ const parseBogMessage = (message: string) => {
   const result: Record<string, string | number> = {};
 
   if (match) {
+    result["Type"] = "purchase";
     result["Type"] = match[1];
     result["Amount"] = +match[2].replace(",", "");
     result["Currency"] = match[3];
