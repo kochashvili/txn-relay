@@ -32,5 +32,7 @@ const parseBogMessage = (message: string) => {
     result["Date"] = match[9];
   }
 
+  console.log(match);
+
   return result;
 };
