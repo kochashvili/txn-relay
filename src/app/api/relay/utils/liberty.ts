@@ -16,7 +16,7 @@ export const saveLibertyTxn = async (message: string) => {
 
 const parseLibertyTxn = (message: string) => {
   const regex =
-    /საბარათე ოპერაცია: ([A-Z]+) ([\d\.,]+)\s+  ქეშბექი: ([A-Z]+)  ([\d\.,]+) (.*?) cashback: ([A-Z]+) ([\d\.,]+)\s+ბარათი: (.*?) \/ \.\.\.\.(\d{4})\s+(.*?)  თარიღი: (\d{2}\/\d{2}\/\d{4})  ნაშთი: ([A-Z]+) ([\d\.,]+)/;
+    /საბარათე ოპერაცია:\s+([A-Z]+)\s+([\d\.,]+)\s+ქეშბექი:\s+([A-Z]+)\s+([\d\.,]+)\s+(.*?)\s+cashback:\s+([A-Z]+)\s+([\d\.,]+)\s+ბარათი:\s+([^\s\/]+).*?(\d{4})\s+(.*?)\s+თარიღი:\s+(\d{2}\/\d{2}\/\d{4})\s+ნაშთი:\s+([A-Z]+)\s+([\d\.,]+)/;
   const match = message.match(regex);
   const result: Record<string, string | number> = {};
 
