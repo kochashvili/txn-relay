@@ -4,4 +4,4 @@ This project lets you receive, process and store your bank transactions in Googl
 
 Currently supported banks: **TBC**, **Bank of Georgia**, **Liberty Bank**.
 
-Supported transaction types: **ERTGULI Purchase**, **AMEX Purchase**, **AKHALI Purchase**
+Supported card types: **ERTGULI Credit**, **AMEX Credit**, **AKHALI Credit**
