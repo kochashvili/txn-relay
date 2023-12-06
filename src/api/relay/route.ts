@@ -5,7 +5,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   console.log("req", req);
 
-  if (!req === null) {
+  if (req === null) {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 
