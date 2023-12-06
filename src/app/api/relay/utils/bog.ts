@@ -3,6 +3,10 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 export const saveBogTxn = async (message: string) => {
   const result = parseBogMessage(message);
 
+  const doc = new GoogleSpreadsheet(
+    process.env.GOOGLE_SPREADSHEET_ID as string
+  );
+
   console.log(result);
 };
 
