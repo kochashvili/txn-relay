@@ -12,7 +12,5 @@ export async function POST(request: Request): Promise<NextResponse> {
   if (data.sender === "BOG") saveBogTxn(data.message);
   if (data.sender === "Liberty") saveLibertyTxn(data.message);
 
-  console.log(data);
-
   return NextResponse.json(data);
 }
