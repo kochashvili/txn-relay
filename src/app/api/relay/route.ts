@@ -21,6 +21,8 @@ export async function POST(request: Request): Promise<NextResponse> {
     if (data.sender === "TBC") await saveTbcTxn(data.message);
     if (data.sender === "BOG") await saveBogTxn(data.message);
     if (data.sender === "Liberty") await saveLibertyTxn(data.message);
+
+    return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json(
       { error: "Something went wrong, try again later" },
