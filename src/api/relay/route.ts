@@ -4,7 +4,7 @@ export async function POST(request: Request): Promise<NextResponse> {
    const req =  await request.body
  );
 
-  console.log("filename", req);
+  console.log("req", req);
 
   if (!filename || request.body === null) {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
