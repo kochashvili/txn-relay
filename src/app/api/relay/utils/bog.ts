@@ -1,3 +1,5 @@
+import { GoogleSpreadsheet } from "google-spreadsheet";
+
 export const saveBogTxn = async (message: string) => {
   const result = parseBogMessage(message);
 
