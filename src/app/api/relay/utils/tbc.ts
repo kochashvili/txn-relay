@@ -13,3 +13,5 @@ export const saveTbcTxn = async (message: string) => {
   const BogSheet = doc.sheetsByTitle["BOG"]!;
   await BogSheet.addRow(result);
 };
+
+const parseTbcTxn = (message: string) => {};
