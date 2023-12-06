@@ -34,7 +34,5 @@ const parseBogMessage = (message: string) => {
     console.log("The string did not match the expected pattern.");
   }
 
-  console.log(lines);
-
   return {};
 };
