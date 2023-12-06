@@ -9,7 +9,7 @@ export const saveBogTxn = async (message: string) => {
     jwtFromEnv
   );
 
-  await doc.loadInfo(); // loads document properties and worksheets
+  await doc.loadInfo();
   console.log(doc.title);
   console.log(result);
 };
