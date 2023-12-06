@@ -10,8 +10,8 @@ export const saveLibertyTxn = async (message: string) => {
   );
 
   await doc.loadInfo();
-  const BogSheet = doc.sheetsByTitle["Liberty"]!;
-  await BogSheet.addRow(result);
+  const LibertySheet = doc.sheetsByTitle["Liberty"]!;
+  //   await LibertySheet.addRow(result);
 };
 
 const parseLibertyTxn = (message: string) => {
