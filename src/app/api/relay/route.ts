@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 
+import { saveBogTxn } from "./utils/bog";
+import { saveLibertyTxn } from "./utils/liberty";
+import { saveTbcTxn } from "./utils/tbc";
+
 interface Data {
   sender: "TBC" | "BOG" | "Liberty";
   message: string;
