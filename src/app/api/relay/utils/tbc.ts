@@ -16,7 +16,7 @@ export const saveTbcTxn = async (message: string) => {
 
 const parseTbcTxn = (message: string) => {
   const regex =
-    /Purchase: ([A-Z]+) ([\d\.,]+) Card: \*\*\*\* (\d{4}) (.*?) Remaining balance: ([A-Z]+) ([\d\.,]+) You will get: ([\d\.,]+) MR Available MR points: ([\d\.,]+) 150 MR = 1 Gel (\d{2}\.\d{2}\.\d{4})/;
+    /([\d\.,]+) ([A-Z]+) (.*) \(\*\*\*(\d{4})\) (.*) (\d{2}\/\d{2}\/\d{4}) (\d{2}:\d{2}:\d{2}) ნაშთი: ([\d\.,]+) ([A-Z]+)/;
   const match = message.match(regex);
   const result: Record<string, string | number> = {};
 
