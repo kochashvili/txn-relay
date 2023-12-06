@@ -1,15 +1,9 @@
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request): Promise<NextResponse> {
-  const req = await request.body;
+  const data = await request.json();
 
-  console.log("req", req);
+  console.log(data);
 
-  if (req === null) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
-  }
-
-  const parsed = JSON.parse(req);
-
-  return NextResponse.json(blob);
+  return NextResponse.json(data);
 }
