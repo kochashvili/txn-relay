@@ -10,8 +10,8 @@ export const saveTbcTxn = async (message: string) => {
   );
 
   await doc.loadInfo();
-  const BogSheet = doc.sheetsByTitle["TBC"]!;
-  await BogSheet.addRow(result);
+  const TbcSheet = doc.sheetsByTitle["TBC"]!;
+  await TbcSheet.addRow(result);
 };
 
 const parseTbcTxn = (message: string) => {
