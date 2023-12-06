@@ -2,7 +2,7 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { jwtFromEnv } from "./jwt";
 
 export const saveTbcTxn = async (message: string) => {
-  const result = parseBogMessage(message);
+  const result = parseTbcTxn(message);
 
   const doc = new GoogleSpreadsheet(
     process.env.GOOGLE_SPREADSHEET_ID!,
