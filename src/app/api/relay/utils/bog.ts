@@ -15,10 +15,11 @@ const parseBogMessage = (message: string) => {
     result.amount = +match[2];
     result.cardDigits = match[3];
     result.merchant = match[4].trim();
-    result.balance = +match[5];
-    result.collectedPoints = +match[6];
-    result.totalPoints = +match[7];
-    result.date = match[8];
+    result.balanceCurrency = match[5];
+    result.balance = +match[6];
+    result.collectedPoints = +match[7];
+    result.totalPoints = +match[8];
+    result.date = match[9];
   }
 
   return result;
