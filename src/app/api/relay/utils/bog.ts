@@ -23,9 +23,9 @@ const parseBogMessage = (message: string) => {
   if (match) {
     result["Type"] = match[1];
     result["Amount"] = +match[2].replace(",", "");
-    result.cardDigits = match[3];
-    result.merchant = match[4].trim();
-    result.balanceCurrency = match[5];
+    result["Currency"] = match[3];
+    result["Merchant"] = match[4].trim();
+    result["Balance Currency"] = match[5];
     result.balance = +match[6].replace(",", "");
     result.collectedPoints = +match[7];
     result.totalPoints = +match[8].replace(",", "");
