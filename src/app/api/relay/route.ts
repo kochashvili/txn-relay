@@ -28,5 +28,5 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({ processed: true });
 }
