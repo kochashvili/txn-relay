@@ -7,7 +7,7 @@ export const saveBogTxn = async (message: string) => {
 };
 
 const parseBogMessage = (message: string) => {
-  const keywords = ["Purchase:"];
+  const keywords = ["Purchase:", "Card:"];
   const lines = message.split("\n");
 
   parseStringTemplate(template, message);
