@@ -21,5 +21,5 @@ export async function POST(request: Request): Promise<NextResponse> {
   if (data.sender === "BOG") await saveBogTxn(data.message);
   if (data.sender === "Liberty") await saveLibertyTxn(data.message);
 
-  return NextResponse.json(data);
+  return NextResponse.json({ success: true });
 }
