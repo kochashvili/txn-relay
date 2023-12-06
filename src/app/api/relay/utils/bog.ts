@@ -8,7 +8,7 @@ const parseBogMessage = (message: string) => {
   const regexPattern =
     /Purchase: (\w+) ([\d,.]+) Card: \*\*\*\* (\d+) (.+?) Remaining balance: \w+ ([\d,.]+) You will get: ([\d,.]+) MR Available MR points: ([\d,.]+) 150 MR = 1 Gel (.+)/;
   const match = message.match(regexPattern);
-  const result = {};
+  const result: Record<string, string | number> = {};
 
   if (match) {
     result.currency = match[1];
