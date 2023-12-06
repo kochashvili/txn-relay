@@ -11,7 +11,7 @@ export const saveLibertyTxn = async (message: string) => {
 
   await doc.loadInfo();
   const LibertySheet = doc.sheetsByTitle["Liberty"]!;
-  //   await LibertySheet.addRow(result);
+  await LibertySheet.addRow(result);
 };
 
 const parseLibertyTxn = (message: string) => {
