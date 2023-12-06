@@ -1,5 +1,6 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { jwtFromEnv } from "./jwt";
+import { types } from "util";
 
 export const saveLibertyTxn = async (message: string) => {
   const result = parseLibertyTxn(message);
@@ -36,3 +37,11 @@ const parseLibertyTxn = (message: string) => {
 
   return result;
 };
+
+
+This project lets you receive, process and store your bank transactions in Google Sheets.
+Currently supported banks: TBC, Bank of Georgia, Liberty Bank.
+Supported transaction types: purchases.
+
+
+
