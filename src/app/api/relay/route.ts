@@ -23,7 +23,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     if (data.sender === "Liberty") await saveLibertyTxn(data.message);
   } catch (error) {
     return NextResponse.json(
-      { error: "Something went wrong" },
+      { error: "Something went wrong, try again later" },
       { status: 500 }
     );
   }
