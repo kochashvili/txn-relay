@@ -1,5 +1,17 @@
+import { GoogleSpreadsheet } from "google-spreadsheet";
+import { jwtFromEnv } from "./jwt";
+
 export const saveLibertyTxn = async (message: string) => {
-  console.log(message);
+  const result = parseLibertyTxn(message);
+
+  const doc = new GoogleSpreadsheet(
+    process.env.GOOGLE_SPREADSHEET_ID!,
+    jwtFromEnv
+  );
+
+  await doc.loadInfo();
+  const BogSheet = doc.sheetsByTitle["Liberty"]!;
+  await BogSheet.addRow(result);
 };
 
 const parseLibertyTxn = (message: string) => {
