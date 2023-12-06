@@ -24,15 +24,13 @@ const parseTbcTxn = (message: string) => {
 
   if (match) {
     result["Type"] = "purchase";
-    result["Currency"] = match[1];
-    result["Amount"] = +match[2].replace(",", "");
-    result["Card"] = match[3];
-    result["Merchant"] = match[4].trim();
-    result["Balance Currency"] = match[5];
-    result["Remaining Balance"] = +match[6].replace(",", "");
-    result["Collected MR points"] = +match[7].replace(",", "");
-    result["MR Points Balance"] = +match[8].replace(",", "");
-    result["Date"] = match[9];
+    result["Currency"] = match[2];
+    result["Amount"] = +match[1].replace(",", "");
+    result["Card"] = match[3] + " " + match[4];
+    result["Merchant"] = match[5].trim();
+    result["Balance Currency"] = match[9];
+    result["Remaining Balance"] = +match[8].replace(",", "");
+    result["Date"] = match[6];
   }
 
   return result;
