@@ -22,13 +22,13 @@ const parseBogMessage = (message: string) => {
 
   if (match) {
     result["Type"] = "purchase";
-    result["Type"] = match[1];
     result["Amount"] = +match[2].replace(",", "");
-    result["Currency"] = match[3];
+    result["Currency"] = match[1];
+    result["Card"] = match[3];
     result["Merchant"] = match[4].trim();
     result["Balance Currency"] = match[5];
     result["Remaining Balance"] = +match[6].replace(",", "");
-    result["Collected MR points"] = +match[7];
+    result["Collected MR points"] = +match[7].replace(",", "");
     result["MR Points Balance"] = +match[8].replace(",", "");
     result["Date"] = match[9];
   }
