@@ -6,7 +6,7 @@ interface Data {
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
-  const data = await request.json<Data>();
+  const data = await request.json<>();
 
   console.log(data);
 
