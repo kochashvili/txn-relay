@@ -20,6 +20,8 @@ const parseTbcTxn = (message: string) => {
   const match = message.match(regex);
   const result: Record<string, string | number> = {};
 
+  console.log(match);
+
   if (match) {
     result["Type"] = "purchase";
     result["Currency"] = match[1];
