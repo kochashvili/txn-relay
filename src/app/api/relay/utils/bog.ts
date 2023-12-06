@@ -1,7 +1,7 @@
 export const saveBogTxn = async (message: string) => {
-  const data = parseBogMessage(message);
+  const result = parseBogMessage(message);
 
-  console.log(message);
+  console.log(result);
 };
 
 const parseBogMessage = (message: string) => {
