@@ -29,7 +29,7 @@ const parseBogMessage = (message: string) => {
     result["Remaining Balance"] = +match[6].replace(",", "");
     result["Collected MR points"] = +match[7];
     result["MR Points Balance"] = +match[8].replace(",", "");
-    result.date = match[9];
+    result["Date"] = match[9];
   }
 
   return result;
