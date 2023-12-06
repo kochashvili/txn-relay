@@ -5,5 +5,6 @@ export const saveBogTxn = async (message: string) => {
 };
 
 const parseBogMessage = (message: string) => {
+  const lines = message.split("\n");
   return {};
 };
