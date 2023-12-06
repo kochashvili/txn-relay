@@ -12,9 +12,6 @@ export const saveBogTxn = async (message: string) => {
   await doc.loadInfo();
   const BogSheet = doc.sheetsByTitle["BOG"]!;
   await BogSheet.addRow(result);
-
-  console.log(doc.title);
-  console.log(result);
 };
 
 const parseBogMessage = (message: string) => {
@@ -24,7 +21,7 @@ const parseBogMessage = (message: string) => {
   const result: Record<string, string | number> = {};
 
   if (match) {
-    result.currency = match[1];
+    result["Type"] = match[1];
     result.amount = +match[2].replace(",", "");
     result.cardDigits = match[3];
     result.merchant = match[4].trim();
