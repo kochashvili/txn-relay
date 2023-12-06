@@ -22,8 +22,8 @@ const parseBogMessage = (message: string) => {
 
   if (match) {
     result["Type"] = "purchase";
-    result["Amount"] = +match[2].replace(",", "");
     result["Currency"] = match[1];
+    result["Amount"] = +match[2].replace(",", "");
     result["Card"] = match[3];
     result["Merchant"] = match[4].trim();
     result["Balance Currency"] = match[5];
