@@ -1,10 +1,12 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import { jwtFromEnv } from "./jwt";
 
 export const saveBogTxn = async (message: string) => {
   const result = parseBogMessage(message);
 
   const doc = new GoogleSpreadsheet(
-    process.env.GOOGLE_SPREADSHEET_ID!;
+    process.env.GOOGLE_SPREADSHEET_ID!,
+    jwtFromEnv
   );
 
   console.log(result);
