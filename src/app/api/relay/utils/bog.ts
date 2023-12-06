@@ -1,5 +1,3 @@
-import { parseStringTemplate } from "string-template-parser";
-
 export const saveBogTxn = async (message: string) => {
   const data = parseBogMessage(message);
 
