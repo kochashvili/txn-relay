@@ -10,7 +10,7 @@ export const saveTbcTxn = async (message: string) => {
   );
 
   await doc.loadInfo();
-  const BogSheet = doc.sheetsByTitle["BOG"]!;
+  const BogSheet = doc.sheetsByTitle["TBC"]!;
   await BogSheet.addRow(result);
 };
 
