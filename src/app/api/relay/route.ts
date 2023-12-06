@@ -13,8 +13,9 @@ interface Data {
 export async function POST(request: Request): Promise<NextResponse> {
   const data: Data = await request.json();
 
-  if (data.secret !== process.env.SECRET)
+  if (data.secret !== process.env.SECRET) {
     return NextResponse.json({ error: "Unauthenticated" }, { status: 401 });
+  }
 
   if (data.sender === "TBC") await saveTbcTxn(data.message);
   if (data.sender === "BOG") await saveBogTxn(data.message);
