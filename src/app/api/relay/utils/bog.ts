@@ -4,7 +4,7 @@ export const saveBogTxn = async (message: string) => {
   const result = parseBogMessage(message);
 
   const doc = new GoogleSpreadsheet(
-    process.env.GOOGLE_SPREADSHEET_ID;
+    process.env.GOOGLE_SPREADSHEET_ID!;
   );
 
   console.log(result);
