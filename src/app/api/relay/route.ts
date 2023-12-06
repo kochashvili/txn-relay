@@ -7,10 +7,14 @@ import { saveTbcTxn } from "./utils/tbc";
 interface Data {
   sender: "TBC" | "BOG" | "Liberty";
   message: string;
+  secret: string;
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
   const data: Data = await request.json();
+
+  if (data.secret !== process.env.SECRET)
+    return NextResponse.error(401, "Unauthorized");
 
   if (data.sender === "TBC") await saveTbcTxn(data.message);
   if (data.sender === "BOG") await saveBogTxn(data.message);
