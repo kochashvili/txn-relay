@@ -34,5 +34,4 @@ const parseTbcTxn = (message: string) => {
   }
 
   return result;
-  return {};
 };
