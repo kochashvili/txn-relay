@@ -11,26 +11,17 @@ const parseBogMessage = (message: string) => {
   const result = {};
 
   if (match) {
-    const currency = match[1];
-    const amount = match[2];
-    const cardDigits = match[3];
-    const merchant = match[4].trim(); // Trimming in case there's leading/trailing whitespace
-    const balance = match[5];
-    const collectedPoints = match[6];
-    const totalPoints = match[7];
-    const date = match[8];
-
-    console.log(`Currency: ${currency}`);
-    console.log(`Amount: ${amount}`);
-    console.log(`Card Digits: ${cardDigits}`);
-    console.log(`Merchant: ${merchant}`);
-    console.log(`Remaining Balance: ${balance}`);
-    console.log(`Collected Points: ${collectedPoints}`);
-    console.log(`Total Points: ${totalPoints}`);
-    console.log(`Date: ${date}`);
+    result.currency = match[1];
+    result.amount = match[2];
+    result.cardDigits = match[3];
+    result.merchant = match[4].trim(); // Trimming in case there's leading/trailing whitespace
+    result.balance = match[5];
+    result.collectedPoints = match[6];
+    result.totalPoints = match[7];
+    result.date = match[8];
   } else {
     console.log("The string did not match the expected pattern.");
   }
 
-  return {};
+  return result;
 };
