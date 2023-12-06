@@ -19,8 +19,6 @@ const parseBogMessage = (message: string) => {
     result.collectedPoints = +match[6];
     result.totalPoints = +match[7];
     result.date = match[8];
-  } else {
-    console.log("The string did not match the expected pattern.");
   }
 
   return result;
