@@ -10,6 +10,9 @@ export const saveBogTxn = async (message: string) => {
   );
 
   await doc.loadInfo();
+  const BogSheet = doc.sheetsByTitle["BOG"]!;
+  await BogSheet.addRow(result);
+
   console.log(doc.title);
   console.log(result);
 };
