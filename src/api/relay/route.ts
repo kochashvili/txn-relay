@@ -1,18 +1,15 @@
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request): Promise<NextResponse> {
-   const req =  await request.body
- );
+  const req = await request.body;
 
   console.log("req", req);
 
-  if (!filename || request.body === null) {
+  if (!reqy === null) {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 
-  const blob = await put(filename, request.body, {
-    access: "public",
-  });
+  const parsed = JSON.parse(req);
 
   return NextResponse.json(blob);
 }
