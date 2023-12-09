@@ -17,7 +17,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     return NextResponse.json({ error: "Unauthenticated" }, { status: 401 });
   }
 
-  console.log({msg: data.message, sender: data.sender}})
+  console.log({ msg: data.message, sender: data.sender });
 
   try {
     if (data.sender === "TBC") await saveTbcTxn(data.message);
