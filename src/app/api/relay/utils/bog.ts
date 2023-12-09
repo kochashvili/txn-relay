@@ -2,7 +2,7 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { jwtFromEnv } from "./jwt";
 
 export const saveBogTxn = async (message: string) => {
-  const result = parseBogTxn(message);
+  const result = parseBogTxn(message.replace(/\n/g, " "));
 
   console.log({ message, result, processor: "BOG" });
 
