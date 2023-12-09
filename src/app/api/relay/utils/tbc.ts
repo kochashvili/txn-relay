@@ -30,7 +30,7 @@ const parseTbcTxn = (message: string) => {
     result["Merchant"] = match[5].trim();
     result["Balance Currency"] = match[9];
     result["Remaining Balance"] = +match[8].replace(",", "");
-    result["Date"] = match[6].replace(".", "/");
+    result["Date"] = match[6];
   }
 
   return result;
