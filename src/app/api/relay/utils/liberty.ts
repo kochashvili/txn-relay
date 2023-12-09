@@ -5,7 +5,7 @@ import { types } from "util";
 export const saveLibertyTxn = async (message: string) => {
   const result = parseLibertyTxn(message);
 
-  console.log({ message, result, processor: "BOG" });
+  console.log({ message, result, processor: "Liberty" });
 
   const doc = new GoogleSpreadsheet(
     process.env.GOOGLE_SPREADSHEET_ID!,
