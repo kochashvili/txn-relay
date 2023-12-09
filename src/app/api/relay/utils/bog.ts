@@ -4,6 +4,8 @@ import { jwtFromEnv } from "./jwt";
 export const saveBogTxn = async (message: string) => {
   const result = parseBogTxn(message);
 
+  console.log({ result, processor: "BOG" });
+
   const doc = new GoogleSpreadsheet(
     process.env.GOOGLE_SPREADSHEET_ID!,
     jwtFromEnv
