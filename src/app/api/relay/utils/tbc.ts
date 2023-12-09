@@ -2,7 +2,7 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { jwtFromEnv } from "./jwt";
 
 export const saveTbcTxn = async (message: string) => {
-  const result = parseTbcTxn(message);
+  const result = parseTbcTxn(message.replace(/\n/g, " "));
 
   console.log({ message, result, processor: "TBC" });
 
