@@ -36,7 +36,5 @@ const parseBogTxn = (message: string) => {
     result["Date"] = match[9].replaceAll(".", "/");
   }
 
-  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
-
   return result;
 };
