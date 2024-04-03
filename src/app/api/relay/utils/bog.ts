@@ -1,5 +1,6 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { jwtFromEnv } from "./jwt";
+import OpenAI from "openai";
 
 export const saveBogTxn = async (message: string) => {
   const result = parseBogTxn(message.replace(/\n/g, " "));
@@ -34,6 +35,8 @@ const parseBogTxn = (message: string) => {
     result["MR Points Balance"] = +match[8].replace(",", "");
     result["Date"] = match[9].replaceAll(".", "/");
   }
+
+  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
   return result;
 };
